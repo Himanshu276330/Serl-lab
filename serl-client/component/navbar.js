@@ -3,7 +3,7 @@ export default function Navbar() {
     return (
         <header className="header">
             <img 
-                src="" 
+                src='image/iiita_logo.png' 
                 className="header--image"
             />
             <h2 className="header--title">SERL LAB</h2>
