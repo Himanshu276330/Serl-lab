@@ -2,6 +2,8 @@
 serl-client/node_modules
 serl-client/.next
 
-
 # server file
 server/node_modules
+
+# test file
+text.html
