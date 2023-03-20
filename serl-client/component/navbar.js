@@ -16,4 +16,4 @@ export default function Navbar() {
             <h4 className="header--project7">Contact Us</h4>
         </header>
     );
-  }
+}
