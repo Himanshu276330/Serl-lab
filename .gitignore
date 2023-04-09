@@ -7,3 +7,4 @@ server/node_modules
 
 # test file
 text.html
+.vscode
