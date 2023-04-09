@@ -1,6 +1,7 @@
 
 
 import Navbar from "../component/navbar";
+// import Footer from "../component/BottomBar";
 
 export default function login() {
     return (
@@ -27,7 +28,7 @@ export default function login() {
               <input className="email" type="text" name="email" required />
               <label>Password:</label>
             </div>
-             <div className="form-check d-flex justify-content-start mb-4">
+            <div className="form-check d-flex justify-content-start mb-4">
               {/* <label className="form-check-label" for="form1Example3">
                 Remember password
               </label> */}
@@ -50,6 +51,10 @@ export default function login() {
         </div>
       </div>
     </section>
+  
         </div>
+       
     );
+    
+   
 }
