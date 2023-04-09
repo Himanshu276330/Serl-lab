@@ -1,5 +1,6 @@
 import Navbar from "../component/navbar";
 import { useState } from "react";
+// import Footer from "../component/BottomBar";
 
 export default function login() {
 
@@ -51,7 +52,7 @@ export default function login() {
               />
               <label>Password:</label>
             </div>
-             <div className="form-check d-flex justify-content-start mb-4">
+            <div className="form-check d-flex justify-content-start mb-4">
               {/* <label className="form-check-label" for="form1Example3">
                 Remember password
               </label> */}
@@ -79,5 +80,6 @@ export default function login() {
       </div>
     </section>
         </div>
+       
     );
 }

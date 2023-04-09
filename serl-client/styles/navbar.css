@@ -9,7 +9,8 @@
 
 .header--image {
     height: 100%;
-    margin-right: 6px;
+    margin-right: 10px;
+    border-radius: 30px;
 }
 
 .header--title {
@@ -57,5 +58,9 @@
     font-size: 1.25rem;
     font-weight: 500;
     margin-right: 40px;
+}
+
+.rounded-circle{
+    border-radius: 30px;
 }
 
