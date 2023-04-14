@@ -1,20 +1,146 @@
+
 .home{
-    background: url();
+    background: url(https://media.istockphoto.com/id/1344939844/photo/hand-holding-drawing-virtual-lightbulb-with-brain-on-bokeh-background-for-creative-and-smart.jpg?b=1&s=170667a&w=0&k=20&c=rR8QkCJuP2rRLXgDHwHwgZGtqHDFf4WFhIz_FpB9IRs=);
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     justify-items: center;
 
 }
 
-.box{
+.wrapper {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
     position: relative;
-    width: 400px;
-    height: 400px;
-    background: transparent;
-    border: 1px solid;
+}
+.row {
+    width: 100%;
+    clear: both;
+    overflow: auto;
+    background-color: #eff9fa;
+    position: relative;
+    padding: 0;
+}
+.row-features {
+    position: relative;
+}
+.new-feature-slider {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+.new-feature-slider .feature-slide {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.new-feature-slider .feature-slide .feature-slide-image img {
+    width: 100%;
+    display: block;
+}
+.new-feature-slider .feature-slide.active {
+    opacity: 1;
+}
+.block-wrap {
+    position: relative;
+    width: 100%;
+}
+.block-wrap:before {
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+    display: block;
+}
+.w50 {
+    width: 50%;
+    float: left;
+}
+.h50:before {
+    padding-top: 50%;
+}
+.block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.content-centered {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    width: 100%;
+    max-width: 25em;
+    transform: translate(-50%, -50%);
+}
+.controls {
+    box-sizing: border-box;
+    width: 80px;
+    height: 160px;
+    position: absolute;
+    z-index: 9999;
+    border-right: solid 8px rgba(92, 198, 200, 0.4);
+    overflow: visible;
+}
+.controls .control {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    display: block;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    float: right;
+}
+.controls .control:first-child {
+    border-bottom: 1px solid rgba(4, 68, 86, 0.2);
+}
+.controls .control.button-next {
+    transform: rotate(180deg);
+}
+.controls .control:before, .controls .control:after {
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform-origin: left center;
+    content: "";
+    background-color: #333f4a;
+    transition: all 0.3s ease;
+}
+.controls .control:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.controls .control:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.controls .control:hover {
+    background-color: #5dc1c3;
+}
+.controls .control:hover:before, .controls .control:hover:after {
+    background-color: white;
+}
+.new-feature-controls {
+    bottom: 10px;
+    right: 50%;
+}
+.img1{
+    background-image: url('http://www.williamsjettenders.com/wp-content/uploads/2015/10/features41.jpg');
 }

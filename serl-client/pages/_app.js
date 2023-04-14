@@ -5,6 +5,7 @@ import '... @/styles/login.css'
 import '... @/styles/profile.css'
 import '... @/styles/main_login.css'
 import '... @/styles/main.css'
+import '... @/styles/home.css'
 
 // import '... @/styles/BottomBar.css'
 

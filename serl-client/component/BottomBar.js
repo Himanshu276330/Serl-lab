@@ -45,6 +45,7 @@ export default function Footer() {
      {/* <div>
      <p className="copyright">iiita copyright@2023-redsercved</p>
     </div> */}
+    
     </div>
   );
 }

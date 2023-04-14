@@ -1,5 +1,5 @@
 
-import Button from "../component/Main_Login";
+import Button from "../component/Button";
 
 export default function Main() {
   return (
