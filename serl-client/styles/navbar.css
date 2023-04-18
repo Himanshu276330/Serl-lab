@@ -1,3 +1,9 @@
+a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+
 .header {
     display: flex;
     align-items: center;

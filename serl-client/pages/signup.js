@@ -11,20 +11,29 @@ export default function Signup() {
     const [age,setAge] = useState("");
     const [address,setAddress] = useState("");
 
-    const addLoginDetails = ()=>{
+    const addLoginDetails = async ()=>{
         if(password.length<=0 || email.length<=0 || name.length<=0){
             alert("Please fill all details");
         }else{
-            Axios.post("http://localhost:3001/create",{
-                name: name,
-                mobile: mobile,
-                email: email,
-                password: password,
-                age: age,
-                address: address
-            }).then((res,res)=>{
-                console.log("Success");
-            });
+
+            try{
+                const user_data=await Axios.post("http://localhost:3001/signup",{
+                    name: name,
+                    mobile: mobile,
+                    email: email,
+                    password: password,
+                    age: age,
+                    address: address
+                });
+                console.log(user_data);
+                if(user_data.data.sucess){
+                    localStorage.setItem("user_token",user_data.data.token);
+                }else{
+                    console.log("Error = signup fail");
+                }
+            }catch(err){
+                console.log("Error: "+err);
+            }
         }
     };
 

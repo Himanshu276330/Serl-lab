@@ -7,8 +7,6 @@ export default function Home(){
       <Navbar/>
       {/* <Main/> */}
       {/* <div>""</div> */}
-
-   
     </div>
   );
 }
