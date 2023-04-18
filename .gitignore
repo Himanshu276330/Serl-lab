@@ -1,6 +1,7 @@
 # client file
 serl-client/node_modules
 serl-client/.next
+serl-client/.env
 
 # server file
 server/node_modules
