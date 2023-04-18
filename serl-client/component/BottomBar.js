@@ -2,7 +2,7 @@
 export default function Footer() {
   return (
     <div className='footer-container'>
-     <div className="row">
+    <div className="row">
         <div className="col">
           <img src="logo.png" className="logo"></img>
           <p>this is the serl lab!!</p>
@@ -41,11 +41,11 @@ export default function Footer() {
             
         </div>
       </div>
-     </div>
-     {/* <div>
-     <p className="copyright">iiita copyright@2023-redsercved</p>
+    </div>
+    {/* <div>
+    <p className="copyright">iiita copyright@2023-redsercved</p>
     </div> */}
-    
+
     </div>
   );
 }
