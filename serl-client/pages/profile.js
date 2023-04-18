@@ -1,38 +1,102 @@
+import Axios, * as others from 'axios';
+import { Button } from "../component/Main_Login";
 import Navbar from "../component/navbar";
+import Project_card from '../component/Project_card';
+import { signIn, signOut, useSession, getSession } from 'next-auth/react';
 
-export default function profile() {
+// const jwt = require('jsonwebtoken');
+// const JWT_KEY = "himansu";
+
+export default function profile({session,user,project}) {
+  
+  // console.log(session);
+  // console.log(user);
+  // console.log(project);
+  
+  if (session){
     return (
-       
       <div>
-     <Navbar/>
+        <Navbar />
+        <div className="container">
+          <div className="box">
+            <img src={session.user.image} alt="" />
+            <ul>
+              <li>{session.user.name}</li>
+              <li>{session.user.email}</li>
+              <li>Age: {user.age}</li>
+              <li><Button
+                onClick={(e) => {
+                  e.preventDefault()
+                  signOut()
+                }}
+              >SignOut
+              </Button></li>
+            </ul>
+          </div>
+
+          <div className="About">
+            <ul>
+              <h1>about</h1>
+            </ul>
+            <ul>
+              <h3>Address</h3>
+              <li>IIIT ALLAHABAD</li>
+            </ul>
+            <ul>
+              <h3>My Projects</h3>
+              <br/>
+              <Project_card 
+                data={project}
+              />
+            </ul>
+            <ul>
+              <h3>My Research</h3>
+              
+            </ul>
+            <ul>
+              <h3>More Info</h3>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+                layout.</p>
+            </ul>
+            <ul>
+              <h3>Contact</h3>
+              <li>{user.email}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Navbar />
         <div className="container">
           <div className="box">
             <img src="https://static.vecteezy.com/system/resources/previews/007/033/146/original/profile-icon-login-head-icon-vector.jpg" alt="" />
             <ul>
-            <li>Shivani Pal</li>
-            <li>18 years</li>
-            <li>Artificial Intelligent</li>
-            {/* <li><i style={{fontSize: '24px'}} className="fa"></i>
-                <i style={{fontSize: '24px'}} className="fa"></i>
-                <i style={{fontSize: '24px'}} className="fa"></i></li> */}
+              <li>Name</li>
+              <li>Mail</li>
+              <li>18 years</li>
+              <li><Button
+                onClick={(e) => {
+                  e.preventDefault()
+                  signIn()
+                }}
+              >SignIn
+              </Button></li>
             </ul>
-        </div>
-                    
-        <div className="About">
+          </div>
+
+          <div className="About">
             <ul>
-            <h1>about</h1>
-            </ul>
-            <ul>
-            <h3>Address</h3>
-            <li>IIIT ALLAHABAD</li>
-            </ul>
-            <ul>
-            <h3>My Recent Projects</h3>
-            <li>Project 1</li>
-            <li>Project 2</li>
+              <h1>about</h1>
             </ul>
             <ul>
-              <h3>Project Description</h3>
+              <h3>Address</h3>
+              <li>IIIT ALLAHABAD</li>
+            </ul>
+            <ul>
+              <h3>My Recent Projects</h3>
               <li>Project 1</li>
               <li>Project 2</li>
             </ul>
@@ -53,4 +117,42 @@ export default function profile() {
         </div>
       </div>
     );
+  }
+}
+
+export async function getServerSideProps(context) {
+
+    const session = await getSession(context);
+
+    if(session){
+      const response = await Axios.post("http://localhost:3001/user",
+      {
+        email:session.user.email
+      }
+      );
+
+      const project_res = await Axios.post("http://localhost:3001/project",
+      {
+        email:session.user.email
+      }
+      );
+
+      const user = await response.data;
+      const project = await project_res.data;
+      return{
+        props:{
+          session:session,
+          user: user,
+          project: project
+        }
+      }
+    }else{
+      return{
+        props:{
+          session:session,
+          user: null,
+          project: null
+        }
+      }
+    }
 }
