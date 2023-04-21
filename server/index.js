@@ -53,7 +53,7 @@ app.post('/signup', (req, res) => {
                                     },
                                     JWT_KEY
                                 );
-                                res.status(200).json({sucess: true,token: token });
+                                res.status(200).json({ sucess: true, token: token });
                             }
                         }
                     );
@@ -90,8 +90,8 @@ app.post('/login', (req, res) => {
                             JWT_KEY
                         );
                         res.status(200).json({ sucess: true, msg: "user find", token: token });
-                    }else{
-                        res.status(201).json({ sucess: false, msg: "wrong password"});
+                    } else {
+                        res.status(201).json({ sucess: false, msg: "wrong password" });
                     }
                 } else {
                     res.status(201).json({ sucess: false, msg: 'user not exit' });

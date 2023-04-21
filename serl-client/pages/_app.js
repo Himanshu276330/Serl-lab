@@ -9,7 +9,7 @@ import { SessionProvider } from 'next-auth/react'
 import '... @/styles/home.css'
 import '... @/styles/card_project.css'
 
-// import '... @/styles/BottomBar.css'
+import '... @/styles/footer.css'
 
 
 export default function App({ Component, pageProps, session }) {

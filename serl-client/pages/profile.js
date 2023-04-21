@@ -3,6 +3,7 @@ import { Button } from "../component/Button";
 import Navbar from "../component/navbar";
 import Project_card from '../component/Project_card';
 import { signIn, signOut, useSession, getSession } from 'next-auth/react';
+// import Footer from "../component/footer";
 
 // const jwt = require('jsonwebtoken');
 // const JWT_KEY = "himansu";
@@ -12,8 +13,8 @@ export default function profile({session,user,project}) {
   // console.log(session.user.image);
   // console.log(user);
   // console.log(project);
-  
-  if (session){
+
+  if (session) {
     return (
       <div>
         <Navbar />
@@ -44,14 +45,14 @@ export default function profile({session,user,project}) {
             </ul>
             <ul>
               <h3>My Projects</h3>
-              <br/>
-              <Project_card 
+              <br />
+              <Project_card
                 data={project}
               />
             </ul>
             <ul>
               <h3>My Research</h3>
-              
+
             </ul>
             <ul>
               <h3>More Info</h3>
@@ -115,6 +116,7 @@ export default function profile({session,user,project}) {
             </ul>
           </div>
         </div>
+   
       </div>
     );
   }
@@ -122,37 +124,37 @@ export default function profile({session,user,project}) {
 
 export async function getServerSideProps(context) {
 
-    const session = await getSession(context);
+  const session = await getSession(context);
 
-    if(session){
-      const response = await Axios.post("http://localhost:3001/user",
+  if (session) {
+    const response = await Axios.post("http://localhost:3001/user",
       {
-        email:session.user.email
+        email: session.user.email
       }
-      );
+    );
 
-      const project_res = await Axios.post("http://localhost:3001/project",
+    const project_res = await Axios.post("http://localhost:3001/project",
       {
-        email:session.user.email
+        email: session.user.email
       }
-      );
+    );
 
-      const user = await response.data;
-      const project = await project_res.data;
-      return{
-        props:{
-          session:session,
-          user: user,
-          project: project
-        }
-      }
-    }else{
-      return{
-        props:{
-          session:session,
-          user: null,
-          project: null
-        }
+    const user = await response.data;
+    const project = await project_res.data;
+    return {
+      props: {
+        session: session,
+        user: user,
+        project: project
       }
     }
+  } else {
+    return {
+      props: {
+        session: session,
+        user: null,
+        project: null
+      }
+    }
+  }
 }
