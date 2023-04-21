@@ -1,5 +1,5 @@
 import Axios, * as others from 'axios';
-import { Button } from "../component/Main_Login";
+import { Button } from "../component/Button";
 import Navbar from "../component/navbar";
 import Project_card from '../component/Project_card';
 import { signIn, signOut, useSession, getSession } from 'next-auth/react';
@@ -9,7 +9,7 @@ import { signIn, signOut, useSession, getSession } from 'next-auth/react';
 
 export default function profile({session,user,project}) {
   
-  // console.log(session);
+  // console.log(session.user.image);
   // console.log(user);
   // console.log(project);
   
@@ -76,7 +76,7 @@ export default function profile({session,user,project}) {
             <ul>
               <li>Name</li>
               <li>Mail</li>
-              <li>18 years</li>
+              <li>age</li>
               <li><Button
                 onClick={(e) => {
                   e.preventDefault()

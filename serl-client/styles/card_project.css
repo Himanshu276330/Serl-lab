@@ -1,0 +1,38 @@
+.card_project_publication{
+    width: 70%;
+    background-color: antiquewhite;
+    margin: 30px auto 30px;
+    box-shadow: 5px 10px 10px rgba(15, 14, 15, 0.671);
+    background-color: rgba(167, 159, 160, 0.781); 
+    border-radius: 15px;
+    align-content: center;
+}
+
+.card_project_publication_header{
+    background-color: sienna;
+    color: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px 20px 20px 30px;
+}
+
+.card_project_publication_body{
+    width: 95%;
+    display: flex;
+    padding: 20px 20px 20px 20px;
+}
+
+.card_project_publication_body img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.card_project_publication_body_detail{
+    position: relative;
+    left: 5%;
+    text-align: justify;
+}

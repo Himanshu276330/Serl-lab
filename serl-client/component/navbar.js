@@ -13,12 +13,12 @@ export default function Navbar() {
                 />
                 <h2 className="header--title"><a href="/main">SERL LAB</a></h2>
                 <h4 className="header--project1"><a href="/home">Home</a></h4>
-                <h4 className="header--project2"><a href="/Faculty">Faculty</a></h4>
-                <h4 className="header--project3"><a href="/Researchers">Researchers</a></h4>
-                <h4 className="header--project4"><a href="/Publications">Publications</a></h4>
-                <h4 className="header--project5"><a href="/Projects">Projects</a></h4>
-                <h4 className="header--project6"><a href="/Resources">Resources</a></h4>
-                <h4 className="header--project7"><a href="/Contact">Contact Us</a></h4>
+                <h4 className="header--project2"><a href="/faculty">Faculty</a></h4>
+                <h4 className="header--project3"><a href="/researchers">Researchers</a></h4>
+                <h4 className="header--project4"><a href="/publications">Publications</a></h4>
+                <h4 className="header--project5"><a href="/projects">Projects</a></h4>
+                <h4 className="header--project6"><a href="/resources">Resources</a></h4>
+                <h4 className="header--project7"><a href="/contact">Contact Us</a></h4>
                 <h4 className="header--project7"><a href="/profile"><img src={session.user.image} className="rounded-circle" width="150"></img></a></h4>
             </header>
         );

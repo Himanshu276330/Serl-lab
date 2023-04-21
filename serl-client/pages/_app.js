@@ -7,6 +7,7 @@ import '... @/styles/main_login.css'
 import '... @/styles/main.css'
 import { SessionProvider } from 'next-auth/react'
 import '... @/styles/home.css'
+import '... @/styles/card_project.css'
 
 // import '... @/styles/BottomBar.css'
 
