@@ -4,13 +4,13 @@ import Card_project_publication from "../component/card_project_publication";
 import { useSession, getSession } from 'next-auth/react';
 import Axios, * as others from 'axios';
 
-export default function project({project_data}) {
+export default function publications({session,publication_data}){
     
     return(
         <>
             <Navbar/>
             <Card_project_publication
-                data={project_data}
+                data={publication_data}
             />
             <Footer/>
         </>
@@ -22,20 +22,21 @@ export async function getServerSideProps(context) {
     const session = await getSession(context);
   
     if (session) {
-      const  received_data= await Axios.post("http://localhost:3001/project");
-      const project_data = await received_data.data;
+      const  received_data= await Axios.post("http://localhost:3001/publication");
+      const publication_data = await received_data.data;
       return {
         props: {
             session: session,
-            project_data: project_data
+            publication_data: publication_data
         }
       }
     } else {
       return {
         props: {
           session: session,
-          project_data: null
+          publication_data: null
         }
       }
     }
   }
+  

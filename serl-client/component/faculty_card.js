@@ -1,14 +1,5 @@
 
 export default function card_project_publication({ data }) {
-    if(data==null){
-        data=[{
-            name:"Demo",
-            email:"Demo",
-            link:"Demo",
-            decs:"Demo",
-            img_link:"https://static.vecteezy.com/system/resources/previews/007/033/146/original/profile-icon-login-head-icon-vector.jpg"
-        }]
-    }
     return (
         <>
             {
@@ -23,14 +14,14 @@ export default function card_project_publication({ data }) {
                                 </div>
                                 <div className="card_project_publication_body">
                                     <div className="card_project_publication_body_img">
-                                        <img src={events.img_link}/>
+                                        <img src="https://static.vecteezy.com/system/resources/previews/007/033/146/original/profile-icon-login-head-icon-vector.jpg" />
                                     </div>
                                     <div className="card_project_publication_body_detail">
-                                        <p><b>Publication/Project Name: </b> {events.name}</p>
+                                        <p><b>PHD Domain: </b> {events.domain}</p>
                                         <br />
-                                        <p><b>Deployed Link: </b> {events.link} </p>
+                                        <p><b>Profile Link: </b> {events.link} </p>
                                         <br />
-                                        <p><b>About Publication/Project: </b> {events.decs}.</p>
+                                        <p><b>About: </b> {events.decs}.</p>
                                     </div>
                                 </div>
                             </div>
@@ -42,4 +33,3 @@ export default function card_project_publication({ data }) {
         </>
     );
 }
-

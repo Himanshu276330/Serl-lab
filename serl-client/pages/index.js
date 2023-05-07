@@ -8,13 +8,15 @@ export default function Main() {
       <h1>WELCOME TO THE SOFTWARE WORLD!</h1>
       <p>Here's the right path for your career!!</p>
       <div className='hero-btns'>
-        <Button
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          GET STARTED
-        </Button>
+        <a href="/home" className='btn-mobile'>
+          <Button
+            className='btns'
+            buttonStyle='btn--outline'
+            buttonSize='btn--large'
+          >
+            GET STARTED
+          </Button>
+        </a>
         {/* <Button
           className='btns'
           buttonStyle='btn--primary'

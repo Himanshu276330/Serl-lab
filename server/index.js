@@ -116,10 +116,10 @@ app.post('/user', (req, res) => {
     )
 });
 
-app.post('/project', (req, res) => {
+app.post('/user-project', (req, res) => {
     const email = req.body.email;
     db.query(
-        "SELECT * FROM project WHERE email=(?)", [email],
+        "SELECT * FROM publication_and_project WHERE email=(?)", [email],
         (err, result) => {
             if (err) {
                 res.json(err);
@@ -130,9 +130,80 @@ app.post('/project', (req, res) => {
     )
 });
 
+app.post('/project', (req, res) => {
+    db.query(
+        "SELECT * FROM publication_and_project",
+        (err, result) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    )
+});
+
+app.post('/publication', (req, res) => {
+    db.query(
+        "SELECT * FROM publication_and_project",
+        (err, result) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    )
+});
+
+app.post('/faculty', (req, res) => {
+    db.query(
+        "SELECT * FROM faculty",
+        (err, result) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    )
+});
+
+app.post('/add_publication_and_project', (req, res) => {
+    // name:"Demo",
+    // email:"Demo",
+    // link:"Demo",
+    // decs:"Demo",
+    // img_link:"
+
+    console.log(req.body);
+    
+
+    const email = req.body.email;
+    const name = req.body.name;
+    const link = req.body.link;
+    const img_link = req.body.img_link;
+    const decs = req.body.decs;
+
+    db.query(
+        "INSERT INTO publication_and_project (name,email,link,img_link,decs) VALUES (?,?,?,?,?)",
+        [name, email, link, img_link, decs],
+        (err, result) => {
+            if (err) {
+                res.json(err);
+                console.log(err);
+            } else {
+                res.status(200).json(result);
+            }
+        }
+    )
+
+    console.log("Inserted");
+});
+
 app.get('/test', (req, res) => {
     db.query(
-        "SELECT * FROM login",
+        "SELECT * FROM faculty",
         (err, result) => {
             if (err) {
                 console.log('not connect');

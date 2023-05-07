@@ -16,14 +16,12 @@ export const Button = ({
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
-    <a href='/profile' className='btn-mobile'>
-      <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={onClick}
-        type={type}
-      >
-        {children}
-      </button>
-    </a>
+    <button
+      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+      onClick={onClick}
+      type={type}
+    >
+      {children}
+    </button>
   );
 };

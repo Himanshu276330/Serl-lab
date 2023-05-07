@@ -11,10 +11,9 @@ export default function Navbar() {
                     src='image/iiita_logo.png'
                     className="header--image"
                 />
-                <h2 className="header--title"><a href="/main">SERL LAB</a></h2>
+                <h2 className="header--title"><a href="/home">SERL LAB</a></h2>
                 <h4 className="header--project1"><a href="/home">Home</a></h4>
                 <h4 className="header--project2"><a href="/faculty">Faculty</a></h4>
-                <h4 className="header--project3"><a href="/researchers">Researchers</a></h4>
                 <h4 className="header--project4"><a href="/publications">Publications</a></h4>
                 <h4 className="header--project5"><a href="/projects">Projects</a></h4>
                 <h4 className="header--project6"><a href="/resources">Resources</a></h4>
@@ -32,7 +31,6 @@ export default function Navbar() {
                 <h2 className="header--title"><a href="/profile">SERL LAB</a></h2>
                 <h4 className="header--project1"><a href="/profile">Home</a></h4>
                 <h4 className="header--project2"><a href="/profile">Faculty</a></h4>
-                <h4 className="header--project3"><a href="/profile">Researchers</a></h4>
                 <h4 className="header--project4"><a href="/profile">Publications</a></h4>
                 <h4 className="header--project5"><a href="/profile">Projects</a></h4>
                 <h4 className="header--project6"><a href="/profile">Resources</a></h4>

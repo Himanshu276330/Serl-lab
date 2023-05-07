@@ -3,7 +3,8 @@ import { Button } from "../component/Button";
 import Navbar from "../component/navbar";
 import Project_card from '../component/Project_card';
 import { signIn, signOut, useSession, getSession } from 'next-auth/react';
-// import Footer from "../component/footer";
+import Footer from "../component/footer";
+import { useRouter } from 'next/router';
 
 // const jwt = require('jsonwebtoken');
 // const JWT_KEY = "himansu";
@@ -13,6 +14,8 @@ export default function profile({session,user,project}) {
   // console.log(session.user.image);
   // console.log(user);
   // console.log(project);
+
+  const router = useRouter();
 
   if (session) {
     return (
@@ -32,6 +35,18 @@ export default function profile({session,user,project}) {
                 }}
               >SignOut
               </Button></li>
+              <li><Button
+                onClick={(e) => {
+                  router.push('/form')
+                }}
+              >Add Project
+              </Button></li>
+              <li><Button
+                onClick={(e) => {
+                  router.push('/form')
+                }}
+              >Add Research
+              </Button></li>
             </ul>
           </div>
 
@@ -44,15 +59,11 @@ export default function profile({session,user,project}) {
               <li>IIIT ALLAHABAD</li>
             </ul>
             <ul>
-              <h3>My Projects</h3>
+              <h3>My Projects and Research</h3>
               <br />
               <Project_card
                 data={project}
               />
-            </ul>
-            <ul>
-              <h3>My Research</h3>
-
             </ul>
             <ul>
               <h3>More Info</h3>
@@ -65,6 +76,7 @@ export default function profile({session,user,project}) {
             </ul>
           </div>
         </div>
+        <Footer/>
       </div>
     );
   } else {
@@ -116,7 +128,7 @@ export default function profile({session,user,project}) {
             </ul>
           </div>
         </div>
-   
+        <Footer/>
       </div>
     );
   }
@@ -133,7 +145,7 @@ export async function getServerSideProps(context) {
       }
     );
 
-    const project_res = await Axios.post("http://localhost:3001/project",
+    const project_res = await Axios.post("http://localhost:3001/user-project",
       {
         email: session.user.email
       }
